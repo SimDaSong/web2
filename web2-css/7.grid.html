@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        #grid {
+            border:5px solid pink;
+            display: grid; /* 이때까진 아무 변화 없음 */
+            grid-template-columns: 150px 1fr; /* 왼쪽 컨텐트는 150px, 두 번째 컨텐트가 나머지 영역 차지*/
+        }
+        div, span {
+            border: 5px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div>NAVIGATION</div> <!-- div: 아무 의미 x. 디자인 용도로만 쓰이는 태그. 기본적으로 block level element -->
+        <span>ARTICLE</span> <!-- div 태그처럼 아무 의미 없음. inline element -->
+    </div>
+</body>
+</html>
