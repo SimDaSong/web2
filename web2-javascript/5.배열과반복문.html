@@ -10,13 +10,29 @@
     <h1><a href="index.html">WEB</a></h1>
 
     <input type="button" value="night" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
+        var target = document.querySelector('body'); // 변수 선언을 통한 코드의 중복 해소
+        var alist = document.querySelectorAll('a');
+        
+        if (this.value == 'night') { // # 붙여주기
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white'; 
+          this.value = 'day'; // 이 코드 없으면 night로 바뀌고 멈춤
+
+          for (var i = 0; i < alist.length; i++) {
+            alist[i].style.color = 'powderblue';
+          }
+        }
+        else {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          this.value = 'night';
+
+          for (var i = 0; i < alist.length; i++) {
+            alist[i].style.color = 'blue';
+          }
+        }
     ">
-    <input type="button" value="day" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-    ">
+
     <ol>
         <li><a href="1.html">HTML</a></li>
         <li><a href="2.html">CSS</a></li>
@@ -27,7 +43,7 @@
 
     <p><a href="https://www.w3.org/TR/html51/"  target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
     <p style="margin-top:40px;">HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. </p>
-  
+    
   </body>
 
 </html>
